@@ -97,6 +97,9 @@
       // define the Node template
       myDiagram.nodeTemplate =
         $(go.Node, "Auto",
+          { doubleClick: 
+            function(e, node) { window.open("details/index.html?id=" + node.data.key); } 
+          },
           {
             locationSpot: go.Spot.Top,
             isShadowed: true, shadowBlur: 1,
