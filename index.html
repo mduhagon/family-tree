@@ -98,7 +98,9 @@
       myDiagram.nodeTemplate =
         $(go.Node, "Auto",
           { doubleClick: 
-            function(e, node) { window.open("details/index.html?id=" + node.data.key,"_self"); } 
+            function(e, node) { 
+              if (node.data.link) window.open(node.data.link,"_self"); 
+            } 
           },
           {
             locationSpot: go.Spot.Top,
